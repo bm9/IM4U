@@ -17,8 +17,8 @@ Copyright (c) 2015 BlackMa9
 # このリポジトリについて
 
 IM4Uのビルド済み(ソースなし)プラグインの配布用リポジトリです。  
-IM4Uの本家ソースリポジトリについては、  
-「https://github.com/bm9/UnrealEngine_IM4UPlugin」参照。  
+IM4Uの本家ソースリポジトリについては以下を参照。  
+https://github.com/bm9/UnrealEngine_IM4UPlugin  
 
 ただし、UE4の本家ソースリポジトリをForkしている為、UE4のソースアクセス権限が必要です。  
 事前にGithubアカウントをUE4ソースリポジトリに紐付けし、  
