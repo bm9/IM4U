@@ -1,0 +1,21 @@
+{
+	"FileVersion" : 3,
+	
+	"FriendlyName" : "Import MMD Model&Motion file For UE4. (IM4U)",
+	"Version" : 1,
+	"VersionName" : "0.6.9",
+	"CreatedBy" : "bm9",
+	"CreatedByURL" : "",
+	"EngineVersion" : "4.7.0",
+	"Description" : "Direct import for MMD Model from Binary Files. alpha Ver. ",
+	"Category" : "Developer.ExtendImpoter",
+	"EnabledByDefault" : true,
+	
+	"Modules" :
+	[
+		{
+			"Name" : "IM4U",
+			"Type" : "Editor"
+		}
+	]
+}
