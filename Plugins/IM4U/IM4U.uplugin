@@ -19,5 +19,6 @@
 	"EnabledByDefault": true,
 	"CanContainContent": false,
 	"IsBetaVersion": true,
-	"Installed": false
+	"Installed": false,
+	"EngineVersion" : "4.10.0"
 }
