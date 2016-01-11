@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2015 BlackMa9
+Copyright (c) 2015-2016 BlackMa9
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@ SOFTWARE.
 *******************************************************************************
 The MIT License (MIT)
 
-Copyright (c) 2015 BlackMa9
+Copyright (c) 2015-2016 BlackMa9
 
 以下に定める条件に従い、本ソフトウェアおよび関連文書のファイル（以下「ソフトウェア」）
 の複製を取得するすべての人に対し、ソフトウェアを無制限に扱うことを無償で許可します。
@@ -46,7 +46,7 @@ Copyright (c) 2015 BlackMa9
 その他の著作権について
 
 ・Unreal Engine 4のソースコードを一部改変し使用しています
-Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
+Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 
 ・PMD,PMX,VMDの読み込みに関する処理で一部改変し使用しています
 DX Library Copyright (C) 2001-2015 Takumi Yamada.

@@ -8,7 +8,7 @@ See "Plugins\IM4U\ReadMe.md".
 # License
 
 This software is released under the MIT License, see "Plugins\IM4U\License.txt".
-Copyright (c) 2015 BlackMa9  
+Copyright (c) 2015-2016 BlackMa9  
 
 ---
 
@@ -45,7 +45,7 @@ Githubアカウントにログイン状態でなければリポジトリへの�
 
 # 動作環境
 
-Unreal Engine 4.10.0 環境にてビルド及び動作確認済み。  
+Unreal Engine 4.10.1 環境にてビルド及び動作確認済み。  
 
 他のVerに導入する場合は、本リポジトリの別ブランチからバイナリを取得するか、  
 先のIM4U-Pluginの本家ソースリポジトリからプラグインのソースファイルを取得し、  
