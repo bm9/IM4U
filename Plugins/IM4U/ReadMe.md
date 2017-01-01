@@ -1,4 +1,4 @@
-# IM4U Plugin
+﻿# IM4U Plugin
 
 Import MMD Model and Motion file for UnrealEngine4 Plugin
 
@@ -165,6 +165,23 @@ IK情報は、VMDデータインポート時にIK情報を設定した本アセ�
 　このため、現時点では使用しない方向でお願いします。  
 　IK計算はバグにより除外している為、VMDをモーションインポートでも本Assetを取り込めない様に変更しています。  
 
+## Material instance対応について(Ver.0.7.3 ~)
+
+ModelImport初期時の大量シェーダコンパイルの回避するため、  
+初期のMaterial生成ロジックを変更しました。  
+ImportOptionの「bCreateMaterialInstMode」を有効にすることで動作します。  
+ベースとするMaterialはIM4UのContents内にあるAssetから複製します。  
+このため、もしBase-Materialを変更したい場合は、プラグイン内のAssetを変更すればOKです。  
+効果は、Material数40個ある場合に5000～9000くらいが、400~1000くらいまで落とせます。  
+他、複製したMaterialを修正すれば、継承するMaterial-Instanceがまとめて編集できるので修正コストも減らせるはず。  
+制限として、ModelImport失敗した場合古い一時ファイルが残ることが稀にあります。その場合は、リダイレクトで削除してください。  
+
+また、「bUnlitMaterials」を有効にすると生成するMaterial-InstanceがUnlitベースになります。  
+ライティングなしとなるため、UE4上では浮いた絵となりますがMMDオリジナルベースに近づきます。  
+
+なお、ベースとするMaterialのAssetはMaterial初心者の作品なので、いいAssetのPullRequest募集中です。  
+
+
 # ToDo
 
 ※進捗率は大まかな目安です
@@ -180,7 +197,7 @@ IK情報は、VMDデータインポート時にIK情報を設定した本アセ�
 -  各Assetインポート時のGui(Slate)の作成(大半の項目はダミーの為)  
 	⇒進捗率(5%)→使用しないデータはコメントアウトにより非表示にし対応中。  
 -  マテリアルの対応(透過処理など)  
-	⇒進捗率(20%::サンプル不足、一部透過処理にバグ、スフィアマップの設定方法募集中)  
+	⇒進捗率(60%::サンプル不足、一部透過処理にバグ、スフィアマップの設定方法募集中)  
 -  各AssetのRe-Import対応  
 	⇒進捗率(0%)  
 -  ~~VMDインポート時にターゲット(Skeleton)のボーン/Morph名とVMD内のボーン/Skin名との対応付機能。(外部FBX変換ツールとの互換用)
@@ -220,7 +237,8 @@ IK情報は、VMDデータインポート時にIK情報を設定した本アセ�
 　→原因：ボーンの定義で親ボーンIndexが参照している子ボーンより後ろにデータ定義されている場合、そのままUE4で取り込むと現状ソートし直さない為スケルトンのチェックで異常と見えてしまう。  
 　→暫定回避策：MMDモデルのボーン構造を修正する。  
 　→対象モデル：おんだ式ハッカドール1号 など  
-　→暫定対処：NGフォーマット構造の場合、警告文を表示させクラッシュする恐れがある旨のMessageBoxにて表示するよう対応。(Ver.0.6.14～)  
+　→暫定対処：NGフォーマット構造の場合、警告文を表示させクラッシュする恐れがある旨のMessageBoxにて表示するよう対応。(Ver.0.6.14～)
+  →暫定対処：MessageBoxを無視して読み込んでもCrashしないようにガード処理を追加。(Ver.0.7.2～)    
 
 
 # Release Note
@@ -370,5 +388,24 @@ IK情報は、VMDデータインポート時にIK情報を設定した本アセ�
 - Chg:SkeletonMesh作成時の親Boneの名称を「Root」名に変更 (0.6.5の再修正)For Rig。  
 - Up :UE4オリジナルコード依存箇所のSkeltalMeshImport.cppベース版数を4.9から4.13系に差し替え
 
+
+## Ver 0.7.2 2016/11/13
+
+- Fix:[既知問題-7][暫定対処]Bone階層が反転していた場合にクラッシュする前にチェックする処理を追加    
+
+
+## Ver 0.7.3 2016/11/24
+
+- Add:[Experiment]Material生成処理にプラグイン内部に格納したベースMaterialから複製し、Material-Instanceを生成する機能を追加。    
+- Add:[Experiment]IM4UのプラグインのContentsフォルダを作成し、ベースMaterialを配置。  
+- Add:[Experiment]Material-Instance生成モード有効、かつ、UnlitModeを有効にするとshaderModelをUnlitにする機能を追加。  
+
+
+## Ver 0.7.4 2017/1/1
+
+- Up :[Experiment]Material-Instanceを生成する機能の暫定リリース版に更新。  
+- Fix:[Experiment]プラグイン用Material AssetのEmissive関係のノード構成を修正。 
+- Fix:[Experiment]プラグイン用Material Assetのコメント分にBasePathを追加。    
+- Fix:[Experiment]プラグイン用Material AssetのLuminous系のインポート時に設定する値の計算式を修正。    
 
 以上
