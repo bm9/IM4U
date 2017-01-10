@@ -39,7 +39,7 @@ MMDに関しても理解不足の箇所もあり誤った実装をしている�
 本プラグインで作成するアセットはReImport処理未対応の為、一度ファイルを削除した上で再度Drag&Dropでインポートする必要があります。  
 また、一部の文字がファイル名、ボーン名、Morph名などに入っている場合、UE4の都合によりツール内で別の文字に置換している場合があります。  
 
-本ソースは**「UE4.13.x」**をサポートしています。
+本ソースは**「UE4.14.x」**をサポートしています。
   
 現時点で対応しているインポート処理は下記の各制限事項に記載通りとなります。  
 
@@ -195,9 +195,9 @@ ImportOptionの「bCreateMaterialInstMode」を有効にすることで動作し
 -  VMDインポート処理(IKおよび物理挙動、ボーンのアニメーション)  
 	⇒進捗率(65%)->ただしIKに関しては殆ど出来そうにない…→MMDBridgeを使うことでベイク済みIKとして擬似再現可能。  
 -  各Assetインポート時のGui(Slate)の作成(大半の項目はダミーの為)  
-	⇒進捗率(5%)→使用しないデータはコメントアウトにより非表示にし対応中。  
+	⇒進捗率(90%)→ただしいヘルプ（コメント）が対応できていない。  
 -  マテリアルの対応(透過処理など)  
-	⇒進捗率(60%::サンプル不足、一部透過処理にバグ、スフィアマップの設定方法募集中)  
+	⇒進捗率(80%::サンプル不足、一部透過処理にバグ、スフィアマップの設定方法募集中)  
 -  各AssetのRe-Import対応  
 	⇒進捗率(0%)  
 -  ~~VMDインポート時にターゲット(Skeleton)のボーン/Morph名とVMD内のボーン/Skin名との対応付機能。(外部FBX変換ツールとの互換用)
@@ -407,5 +407,23 @@ ImportOptionの「bCreateMaterialInstMode」を有効にすることで動作し
 - Fix:[Experiment]プラグイン用Material AssetのEmissive関係のノード構成を修正。 
 - Fix:[Experiment]プラグイン用Material Assetのコメント分にBasePathを追加。    
 - Fix:[Experiment]プラグイン用Material AssetのLuminous系のインポート時に設定する値の計算式を修正。    
+
+
+## Ver 0.7.5 2017/1/9
+
+- UE4.14.x create branch 
+- Fix：UM4.14ビルド向けにコンパイルエラー箇所を修正。 
+- Fix:VMD Import時に最大Key数が想定より無駄に含まれるBugを修正。    
+
+
+## Ver 0.7.6 2017/1/10
+
+- Add:VMD Import時にVer.0.7.5で変更したSkeletalMesh未参照バグを修正するために、新規でSkeletalMeshを追加した。 
+- Add:VMD Import時に本Verから追加したSkeletalMeshの選択が異常な場合にリトライ処理をするように追加。    
+- Add:VMD Import時にSkeletonとSkeletalMeshが不一致の場合、ImportERRにするガード処理を追加。    
+- Fix:VMD Import時のImportOptionUIを修正し新規作成した。      
+- Fix:Ver.0.7.5で発生したAnimationAssetのPreviewMeshが正しく表示されるように修正。    
+- Fix:PMX/PMD Import時のImportOptionUIから不要な項目を削除した。     
+- Fix:ImportOptionUIに設定されていた不要なFBX関係のOnlineHelpeを削除した。    
 
 以上
