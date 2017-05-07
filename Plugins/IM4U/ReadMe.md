@@ -39,7 +39,7 @@ MMDに関しても理解不足の箇所もあり誤った実装をしている�
 本プラグインで作成するアセットはReImport処理未対応の為、一度ファイルを削除した上で再度Drag&Dropでインポートする必要があります。  
 また、一部の文字がファイル名、ボーン名、Morph名などに入っている場合、UE4の都合によりツール内で別の文字に置換している場合があります。  
 
-本ソースは**「UE4.15.x」**をサポートしています。
+本ソースは**「UE4.16.x」**をサポートしています。
   
 現時点で対応しているインポート処理は下記の各制限事項に記載通りとなります。  
 
@@ -426,12 +426,19 @@ ImportOptionの「bCreateMaterialInstMode」を有効にすることで動作し
 - Fix:PMX/PMD Import時のImportOptionUIから不要な項目を削除した。     
 - Fix:ImportOptionUIに設定されていた不要なFBX関係のOnlineHelpeを削除した。    
 
+
 ## Ver 0.7.7 2017/5/7
 
 - :arrow_up:UE4.15.x create branch 
 - Fix:UM4.15ビルド向けにコンパイルエラー箇所を修正。 
 - :art::checkered_flag:Add:4.15系のIWYU対応によるwindows.h Include Err回避のために、Lib化(LibEncodeHelperWin)を実施。  
    Dir::"ThirdParty\LibEncodeHelperWin"  
+
+
+## Ver 0.7.8 2017/5/7
+
+- :arrow_up:UE4.16.x create branch 
+- Fix:UM4.16(Pre2)ビルド向けにコンパイルエラー箇所を修正。 
 
 
 以上
