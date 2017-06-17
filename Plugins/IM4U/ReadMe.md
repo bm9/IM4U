@@ -239,7 +239,7 @@ ImportOptionの「bCreateMaterialInstMode」を有効にすることで動作し
 　→対象モデル：おんだ式ハッカドール1号 など  
 　→暫定対処：NGフォーマット構造の場合、警告文を表示させクラッシュする恐れがある旨のMessageBoxにて表示するよう対応。(Ver.0.6.14～)
   →暫定対処：MessageBoxを無視して読み込んでもCrashしないようにガード処理を追加。(Ver.0.7.2～)    
-
+8.MMDモデル側の材質名に"<"">"が含まれる場合、Material Instanceで正常に複製できずMIアセットが大量に生成されてしまうバグがある。  
 
 # Release Note
 
@@ -439,6 +439,11 @@ ImportOptionの「bCreateMaterialInstMode」を有効にすることで動作し
 
 - :arrow_up:UE4.16.x create branch 
 - Fix:UM4.16(Pre2)ビルド向けにコンパイルエラー箇所を修正。 
+
+
+## Ver 0.7.8+ 2017/06/17
+
+- :arrow_up::Rebuild:UE4.16 Pre -> UE4.16.1  
 
 
 以上
